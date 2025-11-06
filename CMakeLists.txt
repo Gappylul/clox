@@ -4,12 +4,16 @@ project(clox C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(clox main.c
-        common.h
-        chunk.h
+        include/common.h
+        include/chunk.h
         chunk.c
-        memory.h
+        include/memory.h
         memory.c
-        debug.h
+        include/debug.h
         debug.c
-        value.h
-        value.c)
+        include/value.h
+        value.c
+        include/vm.h
+        vm.c)
+
+target_include_directories(clox PRIVATE include)
