@@ -3,17 +3,28 @@ project(clox C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(clox main.c
+set(SOURCES
+        src/main.c
+        src/chunk.c
+        src/memory.c
+        src/debug.c
+        src/value.c
+        src/vm.c
+)
+
+set(HEADERS
         include/common.h
         include/chunk.h
-        chunk.c
         include/memory.h
-        memory.c
         include/debug.h
-        debug.c
         include/value.h
-        value.c
         include/vm.h
-        vm.c)
+        include/compiler.h
+        src/compiler.c
+        include/scanner.h
+        src/scanner.c
+)
 
-target_include_directories(clox PRIVATE include)
+add_executable(clox ${SOURCES} ${HEADERS})
+
+target_include_directories(clox PRIVATE src include)
