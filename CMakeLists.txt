@@ -10,6 +10,8 @@ set(SOURCES
         src/debug.c
         src/value.c
         src/vm.c
+        src/scanner.c
+        src/compiler.c
 )
 
 set(HEADERS
@@ -20,9 +22,7 @@ set(HEADERS
         include/value.h
         include/vm.h
         include/compiler.h
-        src/compiler.c
         include/scanner.h
-        src/scanner.c
 )
 
 add_executable(clox ${SOURCES} ${HEADERS})
