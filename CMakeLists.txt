@@ -12,6 +12,7 @@ set(SOURCES
         src/vm.c
         src/scanner.c
         src/compiler.c
+        src/object.c
 )
 
 set(HEADERS
@@ -23,6 +24,7 @@ set(HEADERS
         include/vm.h
         include/compiler.h
         include/scanner.h
+        include/object.h
 )
 
 add_executable(clox ${SOURCES} ${HEADERS})
